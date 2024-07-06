@@ -5,5 +5,21 @@ Hero Page
 {% endblock  %}
 
 {% block content %}
-All Hero | Home Page
+
+<h1>All Hero | Home Page</h1>
+
+<div class="grid grid-cols-3 gap-4 mb-4">
+    {% for hero in heroes %}
+    <div class='bg-gray-800 p-5'>
+        <img class="rounded" src="{{ hero.image.url }}" alt="image" style="max-width:400px; height:auto;">
+        <h3 class="text-2xl ">{{hero.name}}</h3>
+        <a href="{% url 'hero_detail' hero.id %}">
+            <button
+            type='button'>
+                {{hero.type}}
+            </button>
+        </a>
+    </div>
+    {% endfor  %}
+</div>
 {% endblock  %}
