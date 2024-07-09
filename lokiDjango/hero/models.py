@@ -43,7 +43,7 @@ class Store(models.Model):
 
 # one to one 
 
-class HeroCeritficate(models.Model):
+class HeroCertificate(models.Model):
     hero = models.OneToOneField(HeroType, on_delete=models.CASCADE, related_name='certificate')
     certificate_number = models.CharField(max_length=100)
     issued_date = models.DateTimeField(default=timezone.now)

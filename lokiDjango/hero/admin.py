@@ -12,12 +12,11 @@ class HeroTypeAdmin(admin.ModelAdmin):
 
 class StoreAdmin(admin.ModelAdmin):
     list_display = ('name','location')
-    filter_horizontal = ('hero_types')
+    filter_horizontal = ('hero_types',)
 
 class HeroCertificateAdmin(admin.ModelAdmin):
-    list_display= ('hero', 'ceritficate_number')
+    list_display= ('hero', 'certificate_number')
 
 admin.site.register(HeroType, HeroTypeAdmin)
-admin.site.register(HeroReview, HeroReviewInline)
 admin.site.register(Store, StoreAdmin)
 admin.site.register(HeroCertificate, HeroCertificateAdmin)
